@@ -1,0 +1,24 @@
+{
+  "name": "tplqueue-adapter",
+  "version": "0.1.0",
+  "description": "TplQueue.Adapter workflows for architecture, public contracts, retry policies, Observer flow, CacheQ lifecycle, DI registration, and public documentation.",
+  "author": {
+    "name": "FMacias"
+  },
+  "skills": "./skills/",
+  "keywords": ["tplqueue", "adapter", "csharp", "dotnet", "architecture", "public-api", "documentation"],
+  "license": "MIT",
+  "interface": {
+    "displayName": "TplQueue Adapter",
+    "shortDescription": "TplQueue.Adapter architecture, contracts, behavior, and docs.",
+    "longDescription": "Seven portable, instruction-only skills for TplQueue.Adapter architecture review, public contract changes, retry policies, Observer notifications, CacheQ lifecycle, DI registration snapshots, and public documentation. Complements Engineering while treating the target checkout as authoritative and preserving separate repository boundaries for Core, Abstractions, and Usage.",
+    "developerName": "FMacias",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Review the architecture of my TplQueue.Adapter changes.",
+      "Update an Adapter public contract and assess compatibility.",
+      "Review CacheQ completion and Observer delivery semantics."
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "tplqueue-adapter",
+  "version": "0.1.0",
+  "description": "TplQueue.Adapter workflows for architecture, public contracts, retry policies, Observer flow, CacheQ lifecycle, DI registration, and public documentation.",
+  "author": {
+    "name": "FMacias"
+  },
+  "keywords": ["tplqueue", "adapter", "csharp", "dotnet", "architecture", "public-api", "documentation"],
+  "license": "MIT"
+}
