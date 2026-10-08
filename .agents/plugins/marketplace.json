@@ -1,0 +1,20 @@
+{
+  "name": "tplqueue-agent-marketplace",
+  "interface": {
+    "displayName": "TplQueue Agent Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "engineering",
+      "source": {
+        "source": "local",
+        "path": "./plugins/engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

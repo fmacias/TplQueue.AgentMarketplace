@@ -1,0 +1,23 @@
+{
+  "name": "engineering",
+  "version": "0.1.0",
+  "description": "Reusable C# and .NET engineering workflows for review, implementation, testing, validation, and documentation.",
+  "author": {
+    "name": "FMacias"
+  },
+  "skills": "./skills/",
+  "keywords": ["csharp", "dotnet", "engineering", "code-review", "testing", "documentation"],
+  "interface": {
+    "displayName": "Engineering",
+    "shortDescription": "C# and .NET review, implementation, tests, and documentation.",
+    "longDescription": "Eleven portable engineering skills covering C# and concurrency review, architecture and public API review, bounded implementation and refactoring, testing, build and package validation, documentation alignment, XML documentation, and staged commit summaries. Repository instructions supply architecture rules, compatibility targets, and validation commands.",
+    "developerName": "FMacias",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Review my staged C# changes.",
+      "Implement a scoped fix with tests and validation.",
+      "Review the architecture of this change."
+    ]
+  }
+}

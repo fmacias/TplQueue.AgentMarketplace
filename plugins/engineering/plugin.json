@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "engineering",
+  "version": "0.1.0",
+  "description": "Reusable C# and .NET engineering workflows for review, implementation, testing, validation, and documentation.",
+  "author": {
+    "name": "FMacias"
+  },
+  "keywords": ["csharp", "dotnet", "engineering", "code-review", "testing", "documentation"],
+  "license": "MIT"
+}
