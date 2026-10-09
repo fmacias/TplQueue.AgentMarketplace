@@ -1,0 +1,24 @@
+{
+  "name": "tplqueue-core-public",
+  "version": "0.1.0",
+  "description": "Public TplQueue.Core consumption workflows for the factory facade, queue lifecycle, observation, retry behavior, CacheQ semantics, and DataJob/Payload usage without exposing private implementation details.",
+  "author": {
+    "name": "FMacias"
+  },
+  "skills": "./skills/",
+  "keywords": ["tplqueue", "core", "dotnet", "concurrency", "queues", "observer", "retry", "cacheq", "datajob", "payload"],
+  "license": "MIT",
+  "interface": {
+    "displayName": "TplQueue Core Public",
+    "shortDescription": "Public Core factory, queue, observer, retry, and payload guidance.",
+    "longDescription": "Seven portable, instruction-only skills providing public consumer guidance for the privately implemented TplQueue.Core execution kernel. Covers public surface review, factory construction, queue lifecycle, observation, retry selection, CacheQ semantics, and DataJob/Payload usage. Complements Engineering, Abstractions, Adapter, and Usage workflows. Current public contracts, maintained public documentation, and observable behavior remain authoritative. The plugin and its instructions are MIT; Core package and source licenses remain separate.",
+    "developerName": "FMacias",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Review my use of the public TplQueue.Core API.",
+      "Explain Core queue completion and CacheQ acknowledgment.",
+      "Check root and queue retry-policy precedence."
+    ]
+  }
+}

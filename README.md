@@ -1,15 +1,15 @@
 # TplQueue Agent Marketplace
 
-A repository marketplace containing **Engineering**, with portable C# and .NET engineering workflows; **TplQueue Adapter**, with seven instruction-only Adapter workflows; **TplQueue Abstractions**, with three instruction-only contract workflows; and **TplQueue Usage**, with six instruction-only sample and consumer workflows. The skills obtain authoritative architecture, compatibility targets, runtime invariants, and validation commands from the repository in which they are used.
+A repository marketplace containing **Engineering**, with portable C# and .NET engineering workflows; **TplQueue Adapter**, with seven instruction-only Adapter workflows; **TplQueue Abstractions**, with three instruction-only contract workflows; **TplQueue Usage**, with six instruction-only sample and consumer workflows; and **TplQueue Core Public**, with seven instruction-only public Core consumption workflows. The skills obtain authoritative architecture, compatibility targets, runtime invariants, and validation commands from the repository in which they are used.
 
 ## Package layout
 
-- [Marketplace catalog](.agents/plugins/marketplace.json): the `tplqueue-agent-marketplace` marketplace, ordered as `engineering`, `tplqueue-adapter`, `tplqueue-abstractions`, and `tplqueue-usage`.
-- Portable manifests: [Engineering](plugins/engineering/plugin.json), [TplQueue Adapter](plugins/tplqueue-adapter/plugin.json), [TplQueue Abstractions](plugins/tplqueue-abstractions/plugin.json), and [TplQueue Usage](plugins/tplqueue-usage/plugin.json), each canonical for its plugin's identity and version.
-- Codex compatibility manifests: [Engineering](plugins/engineering/.codex-plugin/plugin.json), [TplQueue Adapter](plugins/tplqueue-adapter/.codex-plugin/plugin.json), [TplQueue Abstractions](plugins/tplqueue-abstractions/.codex-plugin/plugin.json), and [TplQueue Usage](plugins/tplqueue-usage/.codex-plugin/plugin.json), with matching metadata, skill discovery, and OpenAI presentation.
-- Skills: [eleven Engineering workflows](plugins/engineering/skills/), [seven Adapter workflows](plugins/tplqueue-adapter/skills/), [three Abstractions workflows](plugins/tplqueue-abstractions/skills/), and [six Usage workflows](plugins/tplqueue-usage/skills/).
+- [Marketplace catalog](.agents/plugins/marketplace.json): the `tplqueue-agent-marketplace` marketplace, ordered as `engineering`, `tplqueue-adapter`, `tplqueue-abstractions`, `tplqueue-usage`, and `tplqueue-core-public`.
+- Portable manifests: [Engineering](plugins/engineering/plugin.json), [TplQueue Adapter](plugins/tplqueue-adapter/plugin.json), [TplQueue Abstractions](plugins/tplqueue-abstractions/plugin.json), [TplQueue Usage](plugins/tplqueue-usage/plugin.json), and [TplQueue Core Public](plugins/tplqueue-core-public/plugin.json), each canonical for its plugin's identity and version.
+- Codex compatibility manifests: [Engineering](plugins/engineering/.codex-plugin/plugin.json), [TplQueue Adapter](plugins/tplqueue-adapter/.codex-plugin/plugin.json), [TplQueue Abstractions](plugins/tplqueue-abstractions/.codex-plugin/plugin.json), [TplQueue Usage](plugins/tplqueue-usage/.codex-plugin/plugin.json), and [TplQueue Core Public](plugins/tplqueue-core-public/.codex-plugin/plugin.json), with matching metadata, skill discovery, and OpenAI presentation.
+- Skills: [eleven Engineering workflows](plugins/engineering/skills/), [seven Adapter workflows](plugins/tplqueue-adapter/skills/), [three Abstractions workflows](plugins/tplqueue-abstractions/skills/), [six Usage workflows](plugins/tplqueue-usage/skills/), and [seven Core Public workflows](plugins/tplqueue-core-public/skills/).
 
-Marketplace sources `./plugins/engineering`, `./plugins/tplqueue-adapter`, `./plugins/tplqueue-abstractions`, and `./plugins/tplqueue-usage` resolve relative to this repository root. Skills live at each plugin root under `skills/`. OpenAI metadata is supplied by each compatibility manifest; the portable manifests intentionally have no `extensions.com.openai` override.
+Marketplace sources `./plugins/engineering`, `./plugins/tplqueue-adapter`, `./plugins/tplqueue-abstractions`, `./plugins/tplqueue-usage`, and `./plugins/tplqueue-core-public` resolve relative to this repository root. Skills live at each plugin root under `skills/`. OpenAI metadata is supplied by each compatibility manifest; the portable manifests intentionally have no `extensions.com.openai` override.
 
 ## Included skills
 
@@ -66,6 +66,24 @@ Abstractions skills complement Engineering and discover contract ownership from 
 
 Usage skills complement Engineering without duplicating its generic workflows. They read the target repository's instructions, source, tests, and maintained architecture guide. Usage remains the public sample and package-consumer surface; Adapter owns public product documentation and Core owns private implementation documentation. Additional Usage skills require a distinct, repeated workflow established by scoped instructions or maintained architecture documentation.
 
+### TplQueue Core Public
+
+| Skill | Purpose |
+| --- | --- |
+| [review-core-public-surface](plugins/tplqueue-core-public/skills/review-core-public-surface/SKILL.md) | Review public architecture, consumer semantics, and private-knowledge exposure. |
+| [use-core-factory-facade](plugins/tplqueue-core-public/skills/use-core-factory-facade/SKILL.md) | Use the public factory facade and controlled construction boundary. |
+| [use-core-queue-lifecycle](plugins/tplqueue-core-public/skills/use-core-queue-lifecycle/SKILL.md) | Interpret execution capacity, pause/resume, waiting, cancellation, and disposal. |
+| [observe-core-job-lifecycle](plugins/tplqueue-core-public/skills/observe-core-job-lifecycle/SKILL.md) | Observe asynchronous lifecycle snapshots, failures, and execution channels. |
+| [configure-core-retry-behavior](plugins/tplqueue-core-public/skills/configure-core-retry-behavior/SKILL.md) | Preserve root/queue policy precedence, explicit NoRetry, and failure semantics. |
+| [use-core-cacheq-semantics](plugins/tplqueue-core-public/skills/use-core-cacheq-semantics/SKILL.md) | Distinguish queue completion, asynchronous cache acknowledgment, and disposal. |
+| [use-core-datajob-payload](plugins/tplqueue-core-public/skills/use-core-datajob-payload/SKILL.md) | Use payload-aware factories, identities, handler routing, and supported rehydration. |
+
+Core implementation remains private. The Core package is publicly consumable under its own package license; this Agent plugin and its instructions are MIT. The plugin license does not change or replace Core package/source licensing. This plugin contains only public, consumer-safe knowledge. Implementation-specific Core development guidance remains outside this public plugin; authorized private inspection may verify semantics but must not supply private implementation material for publication.
+
+Core Public complements Engineering's generic procedures, Abstractions' contract-change workflows, Adapter's integrations and DI/configuration workflows, and Usage's sample workflows. Public product documentation continues to be owned and published from Adapter's language trees. These skills guide agents using current public contracts, maintained public documentation, and observable behavior; public usage does not require a private Core checkout.
+
+Add future Core Public skills only for distinct, repeated, independently triggerable consumer workflows or semantic models that are useful beyond one implementation file, stable enough for public guidance, and not already owned by another plugin. Do not create one skill per internal class. Maintain private implementation workflows separately.
+
 ## Use locally
 
 From this repository root, register the marketplace:
@@ -75,13 +93,15 @@ codex plugin marketplace add .
 codex plugin marketplace list
 ```
 
-In the Codex app, open the plugin directory, select **TplQueue Agent Marketplace**, and install **Engineering**, **TplQueue Adapter**, **TplQueue Abstractions**, or **TplQueue Usage** as needed. Start a new thread to use the installed skills. For example, request `$review-csharp` for staged C# changes, `$review-adapter-architecture` for Adapter architecture, `$modify-abstractions-public-contracts` for an Abstractions contract change, or `$validate-usage-package-consumption` for Usage consumer validation.
+In the Codex app, open the plugin directory, select **TplQueue Agent Marketplace**, and install **Engineering**, **TplQueue Adapter**, **TplQueue Abstractions**, **TplQueue Usage**, or **TplQueue Core Public** as needed. Start a new thread to use the installed skills. For example, request `$review-csharp` for staged C# changes, `$review-adapter-architecture` for Adapter architecture, `$modify-abstractions-public-contracts` for an Abstractions contract change, `$validate-usage-package-consumption` for Usage consumer validation, or `$use-core-queue-lifecycle` for public Core queue guidance.
 
 This repository uses the marketplace identifier `tplqueue-agent-marketplace`; registration associates that identifier with this checkout. If another marketplace already uses that identifier, resolve the naming conflict before registering it.
 
 ## Maintain the package
 
 Keep the portable and compatibility manifests' shared identity, version, description, author, keywords, and declared license synchronized. Validate plugin metadata and each changed skill before distribution. When refreshing an installed local plugin, use the plugin-creator update/reinstall workflow; if its cachebuster helper changes the compatibility manifest version, synchronize the portable version before reinstalling.
+
+Use skill-creator's `scripts/quick_validate.py` for each changed skill folder and plugin-creator's `scripts/validate_plugin.py` for the plugin root. Validate canonical `plugin.json` against its declared portable schema as well; the Codex validator checks the compatibility manifest. Check shared manifest metadata, marketplace source resolution, local Markdown links, and the final diff. For Core Public, inspect all new files for private source/test snippets, internal type descriptions, algorithms, synchronization/buffering/scheduler details, private paths, and implementation diagrams before distribution. Keep this README, [AGENTS.md](AGENTS.md), and catalog aligned when package boundaries change.
 
 Local registration makes this checkout available to Codex. It does not publish the plugins to the public directory. The repository is covered by the [MIT license](LICENSE); no public repository URL is declared in the plugin manifests.
 

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "tplqueue-core-public",
+  "version": "0.1.0",
+  "description": "Public TplQueue.Core consumption workflows for the factory facade, queue lifecycle, observation, retry behavior, CacheQ semantics, and DataJob/Payload usage without exposing private implementation details.",
+  "author": {
+    "name": "FMacias"
+  },
+  "keywords": ["tplqueue", "core", "dotnet", "concurrency", "queues", "observer", "retry", "cacheq", "datajob", "payload"],
+  "license": "MIT"
+}
