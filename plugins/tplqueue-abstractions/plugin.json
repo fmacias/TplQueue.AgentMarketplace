@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "tplqueue-abstractions",
+  "version": "0.1.0",
+  "description": "TplQueue.Abstractions workflows for architecture review, public contract changes, and optional execution-channel observation.",
+  "author": {
+    "name": "FMacias"
+  },
+  "keywords": ["tplqueue", "abstractions", "csharp", "dotnet", "architecture", "public-api", "execution-channel"],
+  "license": "MIT"
+}

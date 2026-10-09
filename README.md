@@ -1,15 +1,15 @@
 # TplQueue Agent Marketplace
 
-A repository marketplace containing **Engineering**, with portable C# and .NET engineering workflows, and **TplQueue Adapter**, with seven instruction-only workflows specific to TplQueue.Adapter. The skills obtain authoritative architecture, compatibility targets, runtime invariants, and validation commands from the repository in which they are used.
+A repository marketplace containing **Engineering**, with portable C# and .NET engineering workflows; **TplQueue Adapter**, with seven instruction-only Adapter workflows; and **TplQueue Abstractions**, with three instruction-only contract workflows. The skills obtain authoritative architecture, compatibility targets, runtime invariants, and validation commands from the repository in which they are used.
 
 ## Package layout
 
-- [Marketplace catalog](.agents/plugins/marketplace.json): the `tplqueue-agent-marketplace` marketplace, with `engineering` followed by `tplqueue-adapter`.
-- Portable manifests: [Engineering](plugins/engineering/plugin.json) and [TplQueue Adapter](plugins/tplqueue-adapter/plugin.json), each canonical for its plugin's identity and version.
-- Codex compatibility manifests: [Engineering](plugins/engineering/.codex-plugin/plugin.json) and [TplQueue Adapter](plugins/tplqueue-adapter/.codex-plugin/plugin.json), with matching metadata, skill discovery, and OpenAI presentation.
-- Skills: [eleven Engineering workflows](plugins/engineering/skills/) and [seven Adapter workflows](plugins/tplqueue-adapter/skills/).
+- [Marketplace catalog](.agents/plugins/marketplace.json): the `tplqueue-agent-marketplace` marketplace, ordered as `engineering`, `tplqueue-adapter`, and `tplqueue-abstractions`.
+- Portable manifests: [Engineering](plugins/engineering/plugin.json), [TplQueue Adapter](plugins/tplqueue-adapter/plugin.json), and [TplQueue Abstractions](plugins/tplqueue-abstractions/plugin.json), each canonical for its plugin's identity and version.
+- Codex compatibility manifests: [Engineering](plugins/engineering/.codex-plugin/plugin.json), [TplQueue Adapter](plugins/tplqueue-adapter/.codex-plugin/plugin.json), and [TplQueue Abstractions](plugins/tplqueue-abstractions/.codex-plugin/plugin.json), with matching metadata, skill discovery, and OpenAI presentation.
+- Skills: [eleven Engineering workflows](plugins/engineering/skills/), [seven Adapter workflows](plugins/tplqueue-adapter/skills/), and [three Abstractions workflows](plugins/tplqueue-abstractions/skills/).
 
-Marketplace sources `./plugins/engineering` and `./plugins/tplqueue-adapter` resolve relative to this repository root. Skills live at each plugin root under `skills/`. OpenAI metadata is supplied by each compatibility manifest; the portable manifests intentionally have no `extensions.com.openai` override.
+Marketplace sources `./plugins/engineering`, `./plugins/tplqueue-adapter`, and `./plugins/tplqueue-abstractions` resolve relative to this repository root. Skills live at each plugin root under `skills/`. OpenAI metadata is supplied by each compatibility manifest; the portable manifests intentionally have no `extensions.com.openai` override.
 
 ## Included skills
 
@@ -43,6 +43,16 @@ Marketplace sources `./plugins/engineering` and `./plugins/tplqueue-adapter` res
 
 Adapter skills complement Engineering and read the target checkout's instructions, source, tests, and documentation. Adapter package subcomponents remain within `tplqueue-adapter`; additional skills require a distinct reusable workflow established by package-level instructions. TplQueue.Usage remains a separate consumer repository and future `tplqueue-usage` plugin.
 
+### TplQueue Abstractions
+
+| Skill | Purpose |
+| --- | --- |
+| `review-abstractions-architecture` | Review the shared contract boundary, responsibilities, and downstream coupling. |
+| `modify-abstractions-public-contracts` | Change owned public contracts with compatibility, migration, and consumer impact in view. |
+| `modify-execution-channel-observation` | Preserve optional diagnostic metadata, nullable channels, retry stability, and terminal-event semantics. |
+
+Abstractions skills complement Engineering and discover contract ownership from the target checkout. Core, Adapter, and Usage remain separate repository boundaries; Adapter continues to own publishable public documentation. Additional Abstractions skills require a distinct reusable contract workflow or non-trivial invariant established by repository instructions, rather than one skill per type or folder.
+
 ## Use locally
 
 From this repository root, register the marketplace:
@@ -52,7 +62,7 @@ codex plugin marketplace add .
 codex plugin marketplace list
 ```
 
-In the Codex app, open the plugin directory, select **TplQueue Agent Marketplace**, and install **Engineering** and/or **TplQueue Adapter**. Start a new thread to use the installed skills. For example, request `$review-csharp` for staged C# changes or `$review-adapter-architecture` for an Adapter architecture review.
+In the Codex app, open the plugin directory, select **TplQueue Agent Marketplace**, and install **Engineering**, **TplQueue Adapter**, or **TplQueue Abstractions** as needed. Start a new thread to use the installed skills. For example, request `$review-csharp` for staged C# changes, `$review-adapter-architecture` for Adapter architecture, or `$modify-abstractions-public-contracts` for an Abstractions contract change.
 
 This repository uses the marketplace identifier `tplqueue-agent-marketplace`; registration associates that identifier with this checkout. If another marketplace already uses that identifier, resolve the naming conflict before registering it.
 

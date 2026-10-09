@@ -1,0 +1,24 @@
+{
+  "name": "tplqueue-abstractions",
+  "version": "0.1.0",
+  "description": "TplQueue.Abstractions workflows for architecture review, public contract changes, and optional execution-channel observation.",
+  "author": {
+    "name": "FMacias"
+  },
+  "skills": "./skills/",
+  "keywords": ["tplqueue", "abstractions", "csharp", "dotnet", "architecture", "public-api", "execution-channel"],
+  "license": "MIT",
+  "interface": {
+    "displayName": "TplQueue Abstractions",
+    "shortDescription": "TplQueue contract architecture, compatibility, and observation.",
+    "longDescription": "Three portable, instruction-only skills for TplQueue.Abstractions architecture review, public contract changes, and optional execution-channel observation. Complements Engineering while treating the target checkout as authoritative, preserving netstandard2.0 compatibility, and identifying impact on Core, Adapter, and Usage across separate repository boundaries.",
+    "developerName": "FMacias",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Review the architecture of my TplQueue.Abstractions changes.",
+      "Update an Abstractions public contract and assess consumer impact.",
+      "Review optional execution-channel observation compatibility."
+    ]
+  }
+}
