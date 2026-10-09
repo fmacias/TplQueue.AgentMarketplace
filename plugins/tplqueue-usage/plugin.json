@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "tplqueue-usage",
+  "version": "0.1.0",
+  "description": "TplQueue.Usage workflows for sample architecture, package consumption, simulation runtime, Blazor projection, and JobMonitor visualization and interaction.",
+  "author": {
+    "name": "FMacias"
+  },
+  "keywords": ["tplqueue", "usage", "dotnet", "blazor", "package-consumption", "simulation", "job-monitor"],
+  "license": "MIT"
+}

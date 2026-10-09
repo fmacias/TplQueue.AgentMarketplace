@@ -1,0 +1,24 @@
+{
+  "name": "tplqueue-usage",
+  "version": "0.1.0",
+  "description": "TplQueue.Usage workflows for sample architecture, package consumption, simulation runtime, Blazor projection, and JobMonitor visualization and interaction.",
+  "author": {
+    "name": "FMacias"
+  },
+  "skills": "./skills/",
+  "keywords": ["tplqueue", "usage", "dotnet", "blazor", "package-consumption", "simulation", "job-monitor"],
+  "license": "MIT",
+  "interface": {
+    "displayName": "TplQueue Usage",
+    "shortDescription": "TplQueue samples, package consumption, and JobMonitor workflows.",
+    "longDescription": "Six portable, instruction-only skills for TplQueue.Usage sample architecture review, package-consumer validation, simulation runtime changes, Blazor monitor projection, JobMonitor visualization, and interactive validation. Complements Engineering while preserving module ownership, shared queue identity, host-owned workloads, and public consumer boundaries. The target repository's instructions, source, tests, and maintained architecture guide remain authoritative.",
+    "developerName": "FMacias",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Review the architecture of my TplQueue.Usage sample changes.",
+      "Validate standalone TplQueue.Usage package consumption.",
+      "Update the JobMonitor visualization and validate browser interactions."
+    ]
+  }
+}
