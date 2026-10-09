@@ -1,0 +1,24 @@
+{
+  "name": "tplqueue-overview",
+  "version": "0.1.0",
+  "description": "Cross-repository TplQueue integration guidance for choosing packages, composing Core and Adapter, dependency injection, ASP.NET/SignalR, legacy .NET applications, DataJobs, payload handlers and cache providers.",
+  "author": {
+    "name": "FMacias"
+  },
+  "skills": "./skills/",
+  "keywords": ["tplqueue", "dotnet", "integration", "architecture", "dependency-injection", "aspnet", "signalr", "legacy", "retry", "datajob", "payload", "cache"],
+  "license": "MIT",
+  "interface": {
+    "displayName": "TplQueue Overview",
+    "shortDescription": "Start here for TplQueue packages and application integration.",
+    "longDescription": "Seven portable, instruction-only skills for adopting TplQueue across Core, Adapter, Abstractions, and Usage: architecture, package selection, direct composition, Microsoft DI, ASP.NET/SignalR, legacy .NET, and DataJob/cache/handler composition. Routes deeper questions to the owning plugins and keeps Core implementation private. This plugin is MIT; Core retains its own package/license terms.",
+    "developerName": "FMacias",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Which TplQueue packages do I need for my application?",
+      "Explain how CoreApi and the Adapter IApi fit together.",
+      "Help me integrate TplQueue with ASP.NET Core and SignalR."
+    ]
+  }
+}

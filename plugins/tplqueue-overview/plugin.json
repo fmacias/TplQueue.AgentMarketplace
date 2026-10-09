@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "tplqueue-overview",
+  "version": "0.1.0",
+  "description": "Cross-repository TplQueue integration guidance for choosing packages, composing Core and Adapter, dependency injection, ASP.NET/SignalR, legacy .NET applications, DataJobs, payload handlers and cache providers.",
+  "author": {
+    "name": "FMacias"
+  },
+  "keywords": ["tplqueue", "dotnet", "integration", "architecture", "dependency-injection", "aspnet", "signalr", "legacy", "retry", "datajob", "payload", "cache"],
+  "license": "MIT"
+}

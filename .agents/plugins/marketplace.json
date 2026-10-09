@@ -5,6 +5,18 @@
   },
   "plugins": [
     {
+      "name": "tplqueue-overview",
+      "source": {
+        "source": "local",
+        "path": "./plugins/tplqueue-overview"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "engineering",
       "source": {
         "source": "local",
